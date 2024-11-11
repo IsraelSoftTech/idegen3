@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Generator - Authentication</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <div class="auth-form" id="signInForm">
+            <h2>ID GENERATOR</h2>
+            <a class="toggle" onclick="toggleForm('signUpForm')">Sign In</a>
+            <label for="username">Username</label>
+            <input type="text" id="loginUsername" placeholder="Enter username">
+            <label for="password">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter password">
+            <button onclick="loginUser()">Login</button>
+            <span>or <a onclick="toggleForm('signUpForm')" style="cursor: pointer;">Sign Up</a></span>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="auth-form" id="signUpForm" style="display: none;">
+            <a class="toggle" onclick="toggleForm('signInForm')">Sign Up</a>
+            <label for="username">Username</label>
+            <input type="text" id="signupUsername" placeholder="Enter username">
+            <label for="email">Email</label>
+            <input type="email" id="signupEmail" placeholder="Enter email">
+            <label for="password">Password</label>
+            <input type="password" id="signupPassword" placeholder="Enter password">
+            <button onclick="signUpUser()">Create</button>
+        </div>
+    </div>
+    
+    <!-- Firebase CDN - Compatible with inline JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

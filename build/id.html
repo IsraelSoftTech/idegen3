@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+  
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h1>ID GENERATOR</h1>
+            <button onclick="showForm()">Create ID</button>
+            <button onclick="uploadFile()">Upload File</button>
+            <button onclick="printPDF()" id="printButton" disabled>Print IDs</button>
+            <h6>By Izzy Tech Team</h6>
+        </div>
+        <div class="form-container" id="formContainer" style="display:none;">
+            <h2>Enter School Details</h2>
+            <input type="text" id="schoolName" placeholder="Name of School" required>
+            <input type="text" id="schoolInfo" placeholder="School Info" required>
+            <input type="text" id="schoolContact" placeholder="School Contact" required>
+            <h6>Choose logo</h6>
+            <input type="file" id="schoolLogo" accept="image/*" required>
+            <h6>Select picture file</h6>
+            <input type="file" id="pictureFolder" webkitdirectory directory multiple required>
+            
+            <button type="button" onclick="startGeneratingIDs()" style="background: blue;width:125px;border-radius: 5px;color:white;padding:5px;cursor: pointer;">OK</button>
+        </div>
+        <input type="file" id="fileInput" accept=".xlsx, .xls" style="display:none;" onchange="handleFile(event)">
+        <div class="id-cards-container" id="idCardsContainer"></div>
+    </div>
+</body>
+</html>
