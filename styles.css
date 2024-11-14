@@ -10,6 +10,7 @@ body {
   width: 100%;
   height: 100vh;
   flex-wrap: wrap;
+
 }
 
 .sidebar {
@@ -66,53 +67,61 @@ body {
 .id-card {
   width: 3.375in;
   height: 2.125in;
-  border: 1px solid #2803f8;
+  border: 1px solid blue;
   margin: 5px;
   padding: 10px;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 }
 
 .id-card .header {
-  background-color: #00A6A6;
-  color: white;
+  background:blue;
+  color: #fff;
   padding: 5px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.7em;
   position: relative;
   height: 100px;
   line-height: 18px;
+  border-radius: 10px;
 }
-button{
+
+button {
   border-radius: 5px;
   border: none;
 }
-.sidebar h6{
+
+.sidebar h6 {
   font-style: italic;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   font-weight: 100;
 }
 
-
 .id-card .header img {
   position: absolute;
-  top: 5px;
+  top: 20px;
   right: 5px;
   width: 30px;
   height: 30px;
   object-fit: contain;
+  border-radius: 50%;
 }
-.id-stamp .header img {
+
+.id-card .stamp {
   position: absolute;
   bottom: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px;
+  left: 160px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
@@ -121,10 +130,8 @@ button{
   justify-content: space-between;
   padding: 2px;
   font-size: 0.7em;
-
-  white-space: nowrap;  /* Prevents line breaks */
-  overflow: hidden;     /* Hides overflow if the name is too long */
-
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .id-card .content .info {
@@ -132,9 +139,12 @@ button{
 }
 
 .id-card .content img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid blue;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -156,26 +166,19 @@ button{
   }
 }
 
-
-
-
-/* Print styling */
 @media print {
-  /* Ensure each ID card fits on its own page */
   .id-card {
       page-break-inside: avoid;
       page-break-after: auto;
   }
 
-  /* Additional print-specific styling */
   body, .container {
       margin: 0;
       padding: 0;
   }
 
-  /* Centering the ID cards and removing unneeded areas */
   .sidebar, .form-container {
-      display: none; /* Hide non-essential elements */
+      display: none;
   }
 
   .id-cards-container {
