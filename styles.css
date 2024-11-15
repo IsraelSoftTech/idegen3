@@ -119,9 +119,9 @@ button {
 .id-card .stamp {
   position: absolute;
   bottom: 5px;
-  left: 160px;
-  width: 70px;
-  height: 70px;
+  left: 190px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 

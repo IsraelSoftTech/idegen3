@@ -97,7 +97,7 @@ function generateIDFromExcel(studentName, className, regNumber, sex, guardianTel
                 Reg No: ${regNumber}<br>
                 Gender: ${sex}<br>
                 Guardian Tel: ${guardianTel}<br>
-                Academic Year: ${academicYear}
+                Student Date of Birth: ${academicYear}
                
             </div>
             <img src="${pictureURL}" alt="Student Photo">
